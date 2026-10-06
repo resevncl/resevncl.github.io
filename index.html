@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo</title>
+  <meta name="description" content="Catálogo de poleras. Consulta por WhatsApp.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <a class="logo" href="#" data-tienda></a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#catalogo">Poleras</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="banner" id="banner" hidden>
+      <img id="banner-img" alt="" fetchpriority="high">
+      <div class="banner-texto">
+        <h1 id="banner-titulo"></h1>
+        <a class="boton boton-claro" href="#catalogo" id="banner-boton"></a>
+      </div>
+    </section>
+
+    <section class="catalogo" id="catalogo">
+      <div class="catalogo-cabecera">
+        <h2>Poleras</h2>
+        <span id="contador"></span>
+      </div>
+      <div class="filtros" id="filtros" hidden></div>
+      <div class="grilla" id="grilla"></div>
+      <p class="aviso" id="aviso" hidden></p>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacto">
+    <p class="footer-logo" data-tienda></p>
+    <nav class="footer-links" aria-label="Contacto">
+      <a id="link-instagram" target="_blank" rel="noopener">Instagram</a>
+      <a id="link-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+    <p class="footer-nota">Consultas y pedidos por WhatsApp</p>
+  </footer>
+
+  <!-- Detalle de producto -->
+  <div class="detalle" id="detalle" role="dialog" aria-modal="true" aria-labelledby="detalle-nombre" hidden>
+    <div class="detalle-caja">
+      <button class="detalle-cerrar" id="detalle-cerrar" aria-label="Cerrar">✕</button>
+      <div class="detalle-galeria">
+        <div class="detalle-fotos" id="detalle-fotos"></div>
+        <div class="detalle-puntos" id="detalle-puntos"></div>
+      </div>
+      <div class="detalle-info">
+        <h2 id="detalle-nombre"></h2>
+        <p class="detalle-precio" id="detalle-precio" hidden></p>
+        <div class="detalle-grupo" id="detalle-tallas" hidden>
+          <h3>Tallas</h3>
+          <ul class="chips"></ul>
+        </div>
+        <div class="detalle-grupo" id="detalle-colores" hidden>
+          <h3>Colores</h3>
+          <ul class="chips"></ul>
+        </div>
+        <a class="boton boton-oscuro" id="detalle-whatsapp" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "mlc2128161075",
+    "nombre": "Polera Hip Hop Estampada Washed Vintage",
+    "imagenes": [
+      "img/polera-hip-hop-washed-vintage-negra-01.webp",
+      "img/polera-hip-hop-washed-vintage-negra-02.webp",
+      "img/polera-hip-hop-washed-vintage-negra-03.webp",
+      "img/polera-hip-hop-washed-vintage-negra-04.webp",
+      "img/polera-hip-hop-washed-vintage-negra-05.webp",
+      "img/polera-hip-hop-washed-vintage-negra-06.webp",
+      "img/polera-hip-hop-washed-vintage-negra-07.webp",
+      "img/polera-hip-hop-washed-vintage-negra-08.webp",
+      "img/polera-hip-hop-washed-vintage-negra-09.webp",
+      "img/polera-hip-hop-washed-vintage-negra-10.webp"
+    ],
+    "tallas": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colores": [
+      "Negro"
+    ],
+    "categoria": "poleras",
+    "precio": null,
+    "visible": true
+  }
+]
