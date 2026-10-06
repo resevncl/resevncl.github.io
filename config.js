@@ -20,6 +20,10 @@ window.CONFIG = {
   // Mensaje prellenado de WhatsApp. {nombre} se reemplaza por el nombre de la polera
   mensajeWhatsapp: "Hola! Quiero consultar por la polera: {nombre}",
 
+  // Aviso de promoción: franja negra arriba del sitio y línea bajo el precio de cada polera.
+  // Déjalo en "" para no mostrar nada.
+  aviso: "2 poleras por $49.990 · Envío incluido",
+
   // Texto del banner principal
   bannerTitulo: "NUEVA COLECCIÓN",
   bannerBoton: "VER POLERAS",

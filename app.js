@@ -39,6 +39,10 @@
   // Abre el chat directo (DM) de Instagram; Instagram no permite prellenar el mensaje
   $("detalle-instagram").href = "https://ig.me/m/" + C.instagram.replace(/^@/, "");
 
+  if (C.aviso) {
+    ["aviso-promo", "detalle-promo"].forEach((id) => { $(id).textContent = C.aviso; $(id).hidden = false; });
+  }
+
   // ---------- Grilla ----------
   function tarjeta(p) {
     const boton = crear("button", "tarjeta");
