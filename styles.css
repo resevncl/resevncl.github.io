@@ -33,11 +33,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   padding: 14px var(--margen) 10px;
 }
 .logo {
-  display: inline-block;
+  display: inline-flex; align-items: center; gap: 10px;
   font-size: 20px; font-weight: 700;
   letter-spacing: 0.22em; text-transform: uppercase;
   margin-right: -0.22em; /* compensa el espaciado de la última letra */
 }
+.logo img { width: auto; height: 30px; margin-left: -0.22em; }
+.logo img[hidden] { display: none; }
 .menu { display: flex; justify-content: center; gap: 28px; margin-top: 10px; }
 .menu a, .footer-links a {
   font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;

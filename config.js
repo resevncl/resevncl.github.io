@@ -5,6 +5,9 @@ window.CONFIG = {
   // Nombre que aparece en el header, el footer y la pestaña del navegador
   nombreTienda: "RESEVN",
 
+  // Logo que acompaña al nombre en el header (null = solo el nombre en texto)
+  logo: "img/logo.png",
+
   // Usuario de Instagram, sin el @
   instagram: "tu_instagram",
 

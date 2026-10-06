@@ -25,6 +25,7 @@
   // ---------- Datos de la tienda ----------
   document.title = C.nombreTienda + " — Catálogo";
   document.querySelectorAll("[data-tienda]").forEach((el) => (el.textContent = C.nombreTienda));
+  if (C.logo) { $("logo-img").src = C.logo; $("logo-img").hidden = false; }
   $("link-instagram").href = "https://instagram.com/" + C.instagram.replace(/^@/, "");
   $("link-whatsapp").href = linkWhatsapp("");
 
