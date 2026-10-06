@@ -12,7 +12,7 @@ window.CONFIG = {
   instagram: "tu_instagram",
 
   // Número de WhatsApp con código de país, sin + ni espacios (Chile: 569XXXXXXXX)
-  whatsapp: "56900000000",
+  whatsapp: "56956638840",
 
   // Mensaje prellenado de WhatsApp. {nombre} se reemplaza por el nombre de la polera
   mensajeWhatsapp: "Hola! Quiero consultar por la polera: {nombre}",
