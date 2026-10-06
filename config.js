@@ -9,7 +9,7 @@ window.CONFIG = {
   logo: "img/logo.png",
 
   // Usuario de Instagram, sin el @
-  instagram: "tu_instagram",
+  instagram: "resevn.cl",
 
   // Número de WhatsApp con código de país, sin + ni espacios (Chile: 569XXXXXXXX)
   whatsapp: "56956638840",
