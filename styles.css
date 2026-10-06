@@ -125,6 +125,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .muestras button[aria-pressed="true"] { border: 2px solid var(--negro); padding: 2px; }
 .muestras img { object-fit: contain; }
 .detalle-info .boton { display: block; margin-top: 32px; }
+.detalle-info .boton + .boton { margin-top: 10px; }
+.boton-borde { background: var(--blanco); color: var(--negro); }
+.boton-borde:hover { background: var(--negro); color: var(--blanco); }
 
 /* ---------- Escritorio ---------- */
 @media (min-width: 700px) {

@@ -28,6 +28,8 @@
   if (C.logo) { $("logo-img").src = C.logo; $("logo-img").hidden = false; }
   $("link-instagram").href = "https://instagram.com/" + C.instagram.replace(/^@/, "");
   $("link-whatsapp").href = linkWhatsapp("");
+  // Abre el chat directo (DM) de Instagram; Instagram no permite prellenar el mensaje
+  $("detalle-instagram").href = "https://ig.me/m/" + C.instagram.replace(/^@/, "");
 
   // ---------- Grilla ----------
   function tarjeta(p) {
