@@ -3,7 +3,7 @@
 // ============================================================
 window.CONFIG = {
   // Nombre que aparece en el header, el footer y la pestaña del navegador
-  nombreTienda: "NOMBRE TIENDA",
+  nombreTienda: "RESEVN",
 
   // Usuario de Instagram, sin el @
   instagram: "tu_instagram",
@@ -19,6 +19,6 @@ window.CONFIG = {
   bannerBoton: "VER POLERAS",
 
   // Foto del banner. Déjalo en null para usar la primera foto del primer producto,
-  // o pon la ruta de una foto, ej: "img/polera-hip-hop-washed-vintage-negra-06.webp"
-  bannerImagen: "img/polera-hip-hop-washed-vintage-negra-06.webp",
+  // o pon la ruta de una foto, ej: "img/polera-valley-dreams-ufo-negro-06.webp"
+  bannerImagen: "img/polera-valley-dreams-ufo-negro-06.webp",
 };

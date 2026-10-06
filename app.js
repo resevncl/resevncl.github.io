@@ -49,6 +49,7 @@
     const precio = formatoPrecio(p.precio);
     if (precio) boton.append(crear("p", "tarjeta-precio", precio));
     if (p.tallas.length) boton.append(crear("p", "tarjeta-tallas", p.tallas.join(" · ")));
+    if (p.variantes.length > 1) boton.append(crear("p", "tarjeta-tallas", p.variantes.length + " colores"));
     return boton;
   }
 
@@ -88,9 +89,9 @@
     grupo.querySelector("ul").replaceChildren(...valores.map((v) => crear("li", "", v)));
   }
 
-  function abrirDetalle(p) {
+  function pintarFotos(p, imagenes) {
     const fotos = $("detalle-fotos");
-    fotos.replaceChildren(...p.imagenes.map((ruta, i) => {
+    fotos.replaceChildren(...imagenes.map((ruta, i) => {
       const img = crear("img");
       img.src = ruta;
       img.alt = p.nombre + " — foto " + (i + 1);
@@ -98,7 +99,7 @@
       return img;
     }));
 
-    const puntos = p.imagenes.length > 1 ? p.imagenes.map((_, i) => {
+    const puntos = imagenes.length > 1 ? imagenes.map((_, i) => {
       const b = crear("button");
       b.type = "button";
       b.setAttribute("aria-label", "Foto " + (i + 1));
@@ -111,20 +112,52 @@
       puntos.forEach((b, i) => b.setAttribute("aria-current", String(i === actual)));
     };
     fotos.onscroll = marcar;
+    fotos.scrollLeft = 0;
+    marcar();
+  }
 
+  // Elige un color: cambia las fotos, el texto "Color: X" y el mensaje de WhatsApp
+  function elegirColor(p, indice) {
+    const v = p.variantes[indice];
+    pintarFotos(p, v.imagenes);
+    $("detalle-color-actual").textContent = v.color;
+    $("detalle-colores").querySelectorAll("button").forEach((b, i) => b.setAttribute("aria-pressed", String(i === indice)));
+    const consulta = p.variantes.length > 1 ? p.nombre + " (color " + v.color + ")" : p.nombre;
+    $("detalle-whatsapp").href = linkWhatsapp(C.mensajeWhatsapp.replace("{nombre}", consulta));
+  }
+
+  function abrirDetalle(p) {
     $("detalle-nombre").textContent = p.nombre;
     const precio = formatoPrecio(p.precio);
     $("detalle-precio").textContent = precio;
     $("detalle-precio").hidden = !precio;
     chips("detalle-tallas", p.tallas);
-    chips("detalle-colores", p.colores);
-    $("detalle-whatsapp").href = linkWhatsapp(C.mensajeWhatsapp.replace("{nombre}", p.nombre));
+
+    const colores = $("detalle-colores");
+    colores.hidden = !p.variantes.some((v) => v.color);
+    colores.querySelector("ul").replaceChildren(...(p.variantes.length > 1 ? p.variantes.map((v, i) => {
+      const li = crear("li");
+      const b = crear("button");
+      b.type = "button";
+      b.title = v.color;
+      b.setAttribute("aria-label", v.color);
+      if (v.imagenes[0]) {
+        const img = crear("img");
+        img.src = miniatura(v.imagenes[0]);
+        img.alt = "";
+        b.append(img);
+      } else {
+        b.textContent = v.color;
+      }
+      b.addEventListener("click", () => elegirColor(p, i));
+      li.append(b);
+      return li;
+    }) : []));
 
     $("detalle").hidden = false;
     document.body.classList.add("sin-scroll");
-    fotos.scrollLeft = 0;
     $("detalle").scrollTop = 0;
-    marcar();
+    elegirColor(p, 0);
   }
 
   function cerrarDetalle() {
@@ -156,7 +189,14 @@
     .then((datos) => {
       productos = datos
         .filter((p) => p.visible !== false)
-        .map((p) => ({ ...p, imagenes: p.imagenes || [], tallas: p.tallas || [], colores: p.colores || [] }));
+        .map((p) => {
+          const imagenes = p.imagenes || [];
+          // Sin "variantes" el producto funciona igual: un solo grupo con todas sus fotos
+          const variantes = p.variantes && p.variantes.length
+            ? p.variantes
+            : [{ color: (p.colores || []).join(" / "), imagenes }];
+          return { ...p, imagenes, tallas: p.tallas || [], variantes };
+        });
       pintarBanner();
       pintarFiltros();
       pintarGrilla();
