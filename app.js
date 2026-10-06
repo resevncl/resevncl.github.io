@@ -2,7 +2,7 @@
   const C = window.CONFIG;
   const $ = (id) => document.getElementById(id);
   let productos = [];
-  let categoriaActiva = null;
+  let marcaActiva = null;
 
   const linkWhatsapp = (texto) =>
     "https://wa.me/" + C.whatsapp.replace(/\D/g, "") + (texto ? "?text=" + encodeURIComponent(texto) : "");
@@ -48,48 +48,81 @@
   }
 
   // ---------- Grilla ----------
+  // Nombre corto para la tarjeta: "Polera Hellstar Estrella" -> "Estrella" (la marca va en su propia línea)
+  function nombreCorto(p) {
+    if (!p.marca) return p.nombre;
+    const i = p.nombre.toLowerCase().indexOf(p.marca.toLowerCase());
+    return (i >= 0 && p.nombre.slice(i + p.marca.length).trim()) || p.nombre;
+  }
+
   function tarjeta(p) {
     const boton = crear("button", "tarjeta");
     boton.type = "button";
     boton.addEventListener("click", () => (location.hash = "p=" + p.id));
 
     const foto = crear("div", "tarjeta-foto");
-    if (p.imagenes[0]) {
-      const img = crear("img");
-      img.src = miniatura(p.imagenes[0]);
-      img.onerror = () => { img.onerror = null; img.src = p.imagenes[0]; };
-      img.alt = p.nombre;
+    p.imagenes.slice(0, 2).forEach((ruta, i) => {
+      const img = crear("img", i ? "tarjeta-foto-dorso" : "");
+      img.src = miniatura(ruta);
+      img.onerror = () => { img.onerror = null; img.src = ruta; };
+      img.alt = i ? "" : p.nombre;
       img.loading = "lazy";
       img.decoding = "async";
       foto.append(img);
-    }
-    boton.append(foto, crear("p", "tarjeta-nombre", p.nombre));
+    });
+    boton.append(foto);
+    if (p.marca) boton.append(crear("p", "tarjeta-marca", p.marca));
+    boton.append(crear("p", "tarjeta-nombre", nombreCorto(p)));
 
     const precio = formatoPrecio(p.precio);
     if (precio) boton.append(crear("p", "tarjeta-precio", precio));
-    if (p.tallas.length) boton.append(crear("p", "tarjeta-tallas", p.tallas.join(" · ")));
-    if (p.variantes.length > 1) boton.append(crear("p", "tarjeta-tallas", p.variantes.length + " colores"));
+    const extra = [p.tallas.join(" · "), p.variantes.length > 1 ? p.variantes.length + " colores" : ""].filter(Boolean);
+    if (extra.length) boton.append(crear("p", "tarjeta-tallas", extra.join("  |  ")));
     return boton;
   }
 
-  function pintarGrilla() {
-    const lista = productos.filter((p) => !categoriaActiva || p.categoria === categoriaActiva);
-    $("grilla").replaceChildren(...lista.map(tarjeta));
-    $("contador").textContent = lista.length + (lista.length === 1 ? " producto" : " productos");
+  // Marcas ordenadas de la que tiene más poleras a la que tiene menos
+  function marcas() {
+    const cuenta = {};
+    productos.forEach((p) => { if (p.marca) cuenta[p.marca] = (cuenta[p.marca] || 0) + 1; });
+    return Object.keys(cuenta).sort((a, b) => cuenta[b] - cuenta[a]);
   }
 
-  function pintarFiltros() {
-    const categorias = [...new Set(productos.map((p) => p.categoria).filter(Boolean))];
-    if (categorias.length < 2) return;
-    const botones = [null, ...categorias].map((cat) => {
-      const b = crear("button", "", cat || "Todo");
+  function seccion(titulo, lista) {
+    const sec = crear("section", "seccion");
+    const cabecera = crear("div", "catalogo-cabecera");
+    cabecera.append(crear("h2", "", titulo), crear("span", "", lista.length + (lista.length === 1 ? " producto" : " productos")));
+    const grilla = crear("div", "grilla");
+    grilla.append(...lista.map(tarjeta));
+    sec.append(cabecera, grilla);
+    return sec;
+  }
+
+  // Sin marca elegida se muestran todas, una sección por marca
+  function pintarGrilla() {
+    const grupos = (marcaActiva ? [marcaActiva] : marcas())
+      .map((m) => seccion(m, productos.filter((p) => p.marca === m)));
+    const sinMarca = productos.filter((p) => !p.marca);
+    if (sinMarca.length && !marcaActiva) grupos.push(seccion(grupos.length ? "Otras" : "Poleras", sinMarca));
+    $("secciones").replaceChildren(...grupos);
+  }
+
+  function pintarMenu() {
+    const enlace = (texto, marca) => {
+      const b = crear("button", "", texto);
       b.type = "button";
-      b.setAttribute("aria-pressed", String(cat === categoriaActiva));
-      b.addEventListener("click", () => { categoriaActiva = cat; pintarFiltros(); pintarGrilla(); });
+      b.setAttribute("aria-pressed", String(marca === marcaActiva));
+      b.addEventListener("click", () => {
+        marcaActiva = marca;
+        pintarMenu();
+        pintarGrilla();
+        $("catalogo").scrollIntoView({ behavior: "smooth" });
+      });
       return b;
-    });
-    $("filtros").replaceChildren(...botones);
-    $("filtros").hidden = false;
+    };
+    const contacto = crear("a", "", "Contacto");
+    contacto.href = "#contacto";
+    $("menu").replaceChildren(enlace("Todo", null), ...marcas().map((m) => enlace(m, m)), contacto);
   }
 
   function pintarBanner() {
@@ -108,8 +141,12 @@
     grupo.querySelector("ul").replaceChildren(...valores.map((v) => crear("li", "", v)));
   }
 
+  // Galería: se desliza con el dedo, con las flechas, con los puntos o con las teclas ← →
+  let irAFoto = () => {};
+
   function pintarFotos(p, imagenes) {
     const fotos = $("detalle-fotos");
+    let actual = 0;
     fotos.replaceChildren(...imagenes.map((ruta, i) => {
       const img = crear("img");
       img.src = ruta;
@@ -122,15 +159,27 @@
       const b = crear("button");
       b.type = "button";
       b.setAttribute("aria-label", "Foto " + (i + 1));
-      b.addEventListener("click", () => fotos.scrollTo({ left: i * fotos.clientWidth, behavior: "smooth" }));
+      b.addEventListener("click", () => irAFoto(i));
       return b;
     }) : [];
     $("detalle-puntos").replaceChildren(...puntos);
+
     const marcar = () => {
-      const actual = Math.round(fotos.scrollLeft / fotos.clientWidth);
       puntos.forEach((b, i) => b.setAttribute("aria-current", String(i === actual)));
+      $("flecha-izq").hidden = imagenes.length < 2 || actual === 0;
+      $("flecha-der").hidden = imagenes.length < 2 || actual === imagenes.length - 1;
     };
-    fotos.onscroll = marcar;
+    irAFoto = (i, relativo) => {
+      actual = Math.max(0, Math.min(imagenes.length - 1, relativo ? actual + i : i));
+      fotos.scrollTo({ left: actual * fotos.clientWidth, behavior: "smooth" });
+      marcar();
+    };
+    // Al deslizar con el dedo, la foto visible pasa a ser la actual
+    let espera;
+    fotos.onscroll = () => {
+      clearTimeout(espera);
+      espera = setTimeout(() => { actual = Math.round(fotos.scrollLeft / fotos.clientWidth); marcar(); }, 120);
+    };
     fotos.scrollLeft = 0;
     marcar();
   }
@@ -146,6 +195,7 @@
   }
 
   function abrirDetalle(p) {
+    $("detalle-marca").textContent = p.marca || "";
     $("detalle-nombre").textContent = p.nombre;
     const precio = formatoPrecio(p.precio);
     $("detalle-precio").textContent = precio;
@@ -199,7 +249,14 @@
 
   $("detalle-cerrar").addEventListener("click", salirDetalle);
   $("detalle").addEventListener("click", (e) => { if (e.target === $("detalle")) salirDetalle(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("detalle").hidden) salirDetalle(); });
+  $("flecha-izq").addEventListener("click", () => irAFoto(-1, true));
+  $("flecha-der").addEventListener("click", () => irAFoto(1, true));
+  document.addEventListener("keydown", (e) => {
+    if ($("detalle").hidden) return;
+    if (e.key === "Escape") salirDetalle();
+    if (e.key === "ArrowLeft") irAFoto(-1, true);
+    if (e.key === "ArrowRight") irAFoto(1, true);
+  });
   window.addEventListener("hashchange", ruta);
 
   // ---------- Carga ----------
@@ -217,7 +274,7 @@
           return { ...p, imagenes, tallas: p.tallas || [], variantes };
         });
       pintarBanner();
-      pintarFiltros();
+      pintarMenu();
       pintarGrilla();
       if (!productos.length) { $("aviso").textContent = "Pronto nuevos productos."; $("aviso").hidden = false; }
       ruta();

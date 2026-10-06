@@ -47,12 +47,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .logo img { width: auto; height: 0.74em; } /* misma altura que las mayúsculas */
 .logo img[hidden] { display: none; }
-.menu { display: flex; justify-content: center; gap: 28px; margin-top: 10px; }
-.menu a, .footer-links a {
+.menu { display: flex; gap: 22px; margin: 10px calc(var(--margen) * -1) 0; padding: 0 var(--margen); overflow-x: auto; scrollbar-width: none; white-space: nowrap; }
+.menu::-webkit-scrollbar { display: none; }
+.menu > :first-child { margin-left: auto; }
+.menu > :last-child { margin-right: auto; }
+.menu button[aria-pressed="true"] { border-color: currentColor; font-weight: 700; }
+.menu a, .menu button, .footer-links a {
   font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
   padding: 4px 0; border-bottom: 1px solid transparent;
 }
-.menu a:hover, .footer-links a:hover { border-color: currentColor; }
+.menu a:hover, .menu button:hover, .footer-links a:hover { border-color: currentColor; }
 
 /* ---------- Banner ---------- */
 .banner { position: relative; height: 72vh; min-height: 380px; max-height: 760px; background: var(--gris-claro); overflow: hidden; }
@@ -93,6 +97,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .tarjeta-foto { aspect-ratio: 4 / 5; background: var(--gris-claro); overflow: hidden; margin-bottom: 10px; }
 .tarjeta-foto img { transition: transform .4s ease; }
 .tarjeta:hover .tarjeta-foto img { transform: scale(1.03); }
+.seccion + .seccion { margin-top: 56px; }
+.tarjeta-foto { position: relative; }
+.tarjeta-foto-dorso { position: absolute; inset: 0; opacity: 0; transition: opacity .25s; }
+@media (hover: hover) { .tarjeta:hover .tarjeta-foto-dorso { opacity: 1; } }
+.tarjeta-marca { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris); margin-bottom: 2px; }
 .tarjeta-nombre { font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; overflow-wrap: anywhere; }
 .tarjeta-precio { font-size: 13px; font-weight: 700; margin-top: 4px; }
 .tarjeta-tallas { font-size: 11px; letter-spacing: 0.08em; color: var(--gris); margin-top: 4px; }
@@ -119,6 +128,17 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .detalle-puntos { position: absolute; left: 0; right: 0; bottom: 12px; display: flex; justify-content: center; gap: 6px; }
 .detalle-puntos button { width: 6px; height: 6px; border-radius: 50%; background: rgba(0,0,0,.2); padding: 0; }
 .detalle-puntos button[aria-current="true"] { background: var(--negro); }
+.detalle-flecha {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,.9); border: 1px solid var(--linea);
+  font-size: 24px; line-height: 1; padding-bottom: 4px;
+}
+.detalle-flecha[hidden] { display: none; }
+.detalle-flecha-izq { left: 10px; }
+.detalle-flecha-der { right: 10px; }
+.detalle-flecha:hover { background: var(--negro); color: var(--blanco); border-color: var(--negro); }
+.detalle-marca { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gris); margin-bottom: 6px; }
 .detalle-info { padding: 24px var(--margen) 40px; }
 .detalle-info h2 { font-size: 18px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; overflow-wrap: anywhere; }
 .detalle-precio { font-size: 18px; font-weight: 700; margin-top: 8px; }

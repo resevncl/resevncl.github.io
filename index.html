@@ -16,10 +16,7 @@
 
   <header class="header">
     <a class="logo" href="#" id="logo"><img id="logo-img" alt="" hidden><span id="logo-texto" data-tienda></span></a>
-    <nav class="menu" aria-label="Principal">
-      <a href="#catalogo">Poleras</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+    <nav class="menu" id="menu" aria-label="Marcas"></nav>
   </header>
 
   <main>
@@ -32,12 +29,7 @@
     </section>
 
     <section class="catalogo" id="catalogo">
-      <div class="catalogo-cabecera">
-        <h2>Poleras</h2>
-        <span id="contador"></span>
-      </div>
-      <div class="filtros" id="filtros" hidden></div>
-      <div class="grilla" id="grilla"></div>
+      <div id="secciones"></div>
       <p class="aviso" id="aviso" hidden></p>
     </section>
   </main>
@@ -58,9 +50,12 @@
       <button class="detalle-cerrar" id="detalle-cerrar" aria-label="Cerrar">✕</button>
       <div class="detalle-galeria">
         <div class="detalle-fotos" id="detalle-fotos"></div>
+        <button class="detalle-flecha detalle-flecha-izq" id="flecha-izq" type="button" aria-label="Foto anterior">&#8249;</button>
+        <button class="detalle-flecha detalle-flecha-der" id="flecha-der" type="button" aria-label="Foto siguiente">&#8250;</button>
         <div class="detalle-puntos" id="detalle-puntos"></div>
       </div>
       <div class="detalle-info">
+        <p class="detalle-marca" id="detalle-marca"></p>
         <h2 id="detalle-nombre"></h2>
         <p class="detalle-precio" id="detalle-precio" hidden></p>
         <p class="detalle-promo" id="detalle-promo" hidden></p>

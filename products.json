@@ -2,6 +2,7 @@
   {
     "id": "mlc2128161075",
     "nombre": "Polera Valley Dreams UFO",
+    "marca": "Valley Dreams",
     "imagenes": [
       "img/polera-valley-dreams-ufo-negro-01.webp",
       "img/polera-valley-dreams-ufo-negro-02.webp",
@@ -47,6 +48,7 @@
   {
     "id": "mlc2128273273",
     "nombre": "Polera Valley Dreams Marilyn",
+    "marca": "Valley Dreams",
     "imagenes": [
       "img/polera-valley-dreams-marilyn-blanco-01.webp",
       "img/polera-valley-dreams-marilyn-blanco-02.webp",
@@ -92,6 +94,7 @@
   {
     "id": "mlc2162336317",
     "nombre": "Polera Mixed Emotion Ángeles",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-angeles-gris-01.webp",
       "img/polera-mixed-emotion-angeles-gris-02.webp",
@@ -137,6 +140,7 @@
   {
     "id": "mlc4300935202",
     "nombre": "Polera Mixed Emotion Love & Hate",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-love-hate-negro-01.webp",
       "img/polera-mixed-emotion-love-hate-negro-02.webp",
@@ -194,6 +198,7 @@
   {
     "id": "mlc3990361840",
     "nombre": "Polera Life Hustlers Ángel Rezando",
+    "marca": "Life Hustlers",
     "imagenes": [
       "img/polera-life-hustlers-angel-rezando-beige-01.webp",
       "img/polera-life-hustlers-angel-rezando-beige-02.webp",
@@ -251,6 +256,7 @@
   {
     "id": "mlc3990361840-dilh001fh",
     "nombre": "Polera Life Hustlers Cupido",
+    "marca": "Life Hustlers",
     "imagenes": [
       "img/polera-life-hustlers-cupido-blanco-01.webp",
       "img/polera-life-hustlers-cupido-blanco-02.webp",
@@ -282,6 +288,7 @@
   {
     "id": "mlc3990361840-dilh002fh",
     "nombre": "Polera Life Hustlers Querubín",
+    "marca": "Life Hustlers",
     "imagenes": [
       "img/polera-life-hustlers-querubin-gris-01.webp",
       "img/polera-life-hustlers-querubin-gris-02.webp",
@@ -325,6 +332,7 @@
   {
     "id": "mlc3990361840-dilh005fh",
     "nombre": "Polera Life Hustlers Boxeador",
+    "marca": "Life Hustlers",
     "imagenes": [
       "img/polera-life-hustlers-boxeador-negro-01.webp",
       "img/polera-life-hustlers-boxeador-negro-02.webp",
@@ -368,6 +376,7 @@
   {
     "id": "mlc3990361840-dilh011fh",
     "nombre": "Polera Life Hustlers Logo",
+    "marca": "Life Hustlers",
     "imagenes": [
       "img/polera-life-hustlers-logo-negro-01.webp",
       "img/polera-life-hustlers-logo-negro-02.webp",
@@ -435,6 +444,7 @@
   {
     "id": "mlc4162582232",
     "nombre": "Polera Mixed Emotion Made By Scars",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-made-by-scars-negro-01.webp",
       "img/polera-mixed-emotion-made-by-scars-negro-02.webp",
@@ -492,6 +502,7 @@
   {
     "id": "mlc4169486120",
     "nombre": "Polera Mixed Emotion Ángel a Caballo",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-angel-a-caballo-blanco-01.webp",
       "img/polera-mixed-emotion-angel-a-caballo-blanco-02.webp",
@@ -551,6 +562,7 @@
   {
     "id": "mlc4169461850",
     "nombre": "Polera Mixed Emotion Alas Rojas",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-alas-rojas-negro-01.webp",
       "img/polera-mixed-emotion-alas-rojas-negro-02.webp",
@@ -610,6 +622,7 @@
   {
     "id": "mlc4284334902",
     "nombre": "Polera Valley Dreams Logo",
+    "marca": "Valley Dreams",
     "imagenes": [
       "img/polera-valley-dreams-logo-negro-01.webp",
       "img/polera-valley-dreams-logo-negro-02.webp",
@@ -653,6 +666,7 @@
   {
     "id": "mlc4300974654",
     "nombre": "Polera Mixed Emotion No Promise Of Tomorrow",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-no-promise-of-tomorrow-negro-01.webp",
       "img/polera-mixed-emotion-no-promise-of-tomorrow-negro-02.webp",
@@ -698,6 +712,7 @@
   {
     "id": "mlc4300999426",
     "nombre": "Polera Mixed Emotion DJ",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-dj-negro-01.webp",
       "img/polera-mixed-emotion-dj-negro-02.webp",
@@ -743,6 +758,7 @@
   {
     "id": "mlc4314457064",
     "nombre": "Polera Hellstar Logo",
+    "marca": "Hellstar",
     "imagenes": [
       "img/polera-hellstar-logo-negro-01.webp",
       "img/polera-hellstar-logo-negro-02.webp",
@@ -788,6 +804,7 @@
   {
     "id": "mlc4333926934",
     "nombre": "Polera Godspeed Golf",
+    "marca": "Godspeed",
     "imagenes": [
       "img/polera-godspeed-golf-beige-01.webp",
       "img/polera-godspeed-golf-beige-02.webp",
@@ -857,6 +874,7 @@
   {
     "id": "mlc4395495892",
     "nombre": "Polera Supply Galaxy",
+    "marca": "Supply",
     "imagenes": [
       "img/polera-supply-galaxy-blanco-01.webp",
       "img/polera-supply-galaxy-blanco-02.webp",
@@ -902,6 +920,7 @@
   {
     "id": "mlc2045310507-0016x-3",
     "nombre": "Polera Mixed Emotion Ángel Jet Ski",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-angel-jet-ski-blanco-01.webp",
       "img/polera-mixed-emotion-angel-jet-ski-blanco-02.webp",
@@ -935,6 +954,7 @@
   {
     "id": "mlc2045310507-0032x-3",
     "nombre": "Polera Mixed Emotion Ángel Arquero",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-angel-arquero-negro-01.webp",
       "img/polera-mixed-emotion-angel-arquero-negro-02.webp",
@@ -972,6 +992,7 @@
   {
     "id": "mlc2045310507-0061x-3",
     "nombre": "Polera Mixed Emotion Fuego",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-fuego-blanco-01.webp",
       "img/polera-mixed-emotion-fuego-blanco-02.webp",
@@ -1009,6 +1030,7 @@
   {
     "id": "mlc2045310507-0062x-3",
     "nombre": "Polera Mixed Emotion Querubín Arquero",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-querubin-arquero-negro-01.webp",
       "img/polera-mixed-emotion-querubin-arquero-negro-02.webp",
@@ -1048,6 +1070,7 @@
   {
     "id": "mlc2045310507-0063x-3",
     "nombre": "Polera Mixed Emotion Glow",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-glow-blanco-01.webp",
       "img/polera-mixed-emotion-glow-blanco-02.webp",
@@ -1087,6 +1110,7 @@
   {
     "id": "mlc2045310507-0067x-3",
     "nombre": "Polera Mixed Emotion Ángeles en la Playa",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-angeles-en-la-playa-blanco-01.webp",
       "img/polera-mixed-emotion-angeles-en-la-playa-blanco-02.webp",
@@ -1124,6 +1148,7 @@
   {
     "id": "mlc2045310507-0078x-3",
     "nombre": "Polera Mixed Emotion Niños Corriendo",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-ninos-corriendo-negro-01.webp",
       "img/polera-mixed-emotion-ninos-corriendo-negro-02.webp",
@@ -1163,6 +1188,7 @@
   {
     "id": "mlc2045310507-0079x-3",
     "nombre": "Polera Mixed Emotion Ángel Guerrero",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-angel-guerrero-blanco-01.webp",
       "img/polera-mixed-emotion-angel-guerrero-blanco-02.webp",
@@ -1202,6 +1228,7 @@
   {
     "id": "mlc2045310507-0087x-3",
     "nombre": "Polera Mixed Emotion Ángeles Rock",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-angeles-rock-negro-01.webp",
       "img/polera-mixed-emotion-angeles-rock-negro-02.webp",
@@ -1243,6 +1270,7 @@
   {
     "id": "mlc3937569314-0060x-3",
     "nombre": "Polera Mixed Emotion Estatua",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-estatua-blanco-01.webp",
       "img/polera-mixed-emotion-estatua-blanco-02.webp",
@@ -1282,6 +1310,7 @@
   {
     "id": "mlc3937569314-0012x-3",
     "nombre": "Polera Mixed Emotion Ángel con Paloma",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-angel-con-paloma-beige-01.webp",
       "img/polera-mixed-emotion-angel-con-paloma-beige-02.webp",
@@ -1335,6 +1364,7 @@
   {
     "id": "mlc3937569314-0010x-3",
     "nombre": "Polera Mixed Emotion Alien",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-alien-blanco-01.webp",
       "img/polera-mixed-emotion-alien-blanco-02.webp",
@@ -1368,6 +1398,7 @@
   {
     "id": "mlc3937569314-0009x-3",
     "nombre": "Polera Mixed Emotion Cupido",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-cupido-blanco-01.webp",
       "img/polera-mixed-emotion-cupido-blanco-02.webp",
@@ -1399,6 +1430,7 @@
   {
     "id": "mlc2006878019",
     "nombre": "Polera Bkys Payaso",
+    "marca": "Bkys",
     "imagenes": [
       "img/polera-bkys-payaso-azul-01.webp",
       "img/polera-bkys-payaso-azul-02.webp",
@@ -1470,6 +1502,7 @@
   {
     "id": "mlc2077146021",
     "nombre": "Polera Mixed Emotion Emotions Never Die",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-emotions-never-die-negro-01.webp",
       "img/polera-mixed-emotion-emotions-never-die-negro-02.webp",
@@ -1591,6 +1624,7 @@
   {
     "id": "mlc2047690719",
     "nombre": "Polera Hellstar Estrella",
+    "marca": "Hellstar",
     "imagenes": [
       "img/polera-hellstar-estrella-negro-01.webp",
       "img/polera-hellstar-estrella-negro-02.webp",
@@ -1636,6 +1670,7 @@
   {
     "id": "mlc2047762439",
     "nombre": "Polera Mixed Emotion Ángel Vintage",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-angel-vintage-negro-01.webp",
       "img/polera-mixed-emotion-angel-vintage-negro-02.webp",
@@ -1681,6 +1716,7 @@
   {
     "id": "mlc2051470833",
     "nombre": "Polera Life Hustlers Astronauta",
+    "marca": "Life Hustlers",
     "imagenes": [
       "img/polera-life-hustlers-astronauta-negro-01.webp",
       "img/polera-life-hustlers-astronauta-negro-02.webp",
@@ -1726,6 +1762,7 @@
   {
     "id": "mlc2051555769",
     "nombre": "Polera Mixed Emotion Ángel Rezando",
+    "marca": "Mixed Emotion",
     "imagenes": [
       "img/polera-mixed-emotion-angel-rezando-negro-01.webp",
       "img/polera-mixed-emotion-angel-rezando-negro-02.webp",

@@ -190,6 +190,7 @@ def main():
         productos.append({
             "id": pid,
             "nombre": nombre,
+            "marca": next((m for m in ajustes.get("marcas", []) if m.lower() in nombre.lower()), ""),
             "imagenes": [i for v in variantes for i in v["imagenes"]],
             "tallas": g["tallas"],
             "colores": [v["color"] for v in variantes],

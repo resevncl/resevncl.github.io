@@ -1,5 +1,14 @@
 {
-  "_ayuda": "nombres: nombre de cada producto NUEVO (los que ya están en products.json se editan ahí). variantes: mueve o renombra un color de una publicación -> [id de producto destino, nombre del color].",
+  "_ayuda": "nombres: nombre de cada producto NUEVO (los que ya están en products.json se editan ahí). variantes: mueve o renombra un color de una publicación -> [id de producto destino, nombre del color]. marcas: lista de marcas; a cada producto nuevo se le asigna la que aparezca en su nombre.",
+  "marcas": [
+    "Mixed Emotion",
+    "Life Hustlers",
+    "Valley Dreams",
+    "Hellstar",
+    "Godspeed",
+    "Supply",
+    "Bkys"
+  ],
   "nombres": {
     "mlc2128161075": "Polera Valley Dreams UFO",
     "mlc2128273273": "Polera Valley Dreams Marilyn",
@@ -40,10 +49,25 @@
     "mlc2006878019": "Polera Bkys Payaso"
   },
   "variantes": {
-    "mlc2162336317|Negro": ["mlc4300935202", "Negro"],
-    "mlc3990361840|DILH002FHWhite": ["mlc3990361840-dilh002fh", "Gris"],
-    "mlc3990361840|DILH020FHWhite": ["mlc3990361840-dilh002fh", "Rosado"],
-    "mlc3990361840|DILH011FHBlack-Black": ["mlc3990361840-dilh011fh", "Negro"],
-    "mlc3990361840|DILH011FHWhite-Black": ["mlc3990361840-dilh011fh", "Blanco"]
+    "mlc2162336317|Negro": [
+      "mlc4300935202",
+      "Negro"
+    ],
+    "mlc3990361840|DILH002FHWhite": [
+      "mlc3990361840-dilh002fh",
+      "Gris"
+    ],
+    "mlc3990361840|DILH020FHWhite": [
+      "mlc3990361840-dilh002fh",
+      "Rosado"
+    ],
+    "mlc3990361840|DILH011FHBlack-Black": [
+      "mlc3990361840-dilh011fh",
+      "Negro"
+    ],
+    "mlc3990361840|DILH011FHWhite-Black": [
+      "mlc3990361840-dilh011fh",
+      "Blanco"
+    ]
   }
 }
