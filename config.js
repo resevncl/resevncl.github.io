@@ -8,6 +8,9 @@ window.CONFIG = {
   // Logo que acompaña al nombre en el header (null = solo el nombre en texto)
   logo: "img/logo.png",
 
+  // true = el logo reemplaza la primera letra del nombre (logo + "ESEVN")
+  logoComoInicial: true,
+
   // Usuario de Instagram, sin el @
   instagram: "resevn.cl",
 

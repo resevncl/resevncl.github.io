@@ -25,7 +25,15 @@
   // ---------- Datos de la tienda ----------
   document.title = C.nombreTienda + " — Catálogo";
   document.querySelectorAll("[data-tienda]").forEach((el) => (el.textContent = C.nombreTienda));
-  if (C.logo) { $("logo-img").src = C.logo; $("logo-img").hidden = false; }
+  if (C.logo) {
+    $("logo-img").src = C.logo;
+    $("logo-img").hidden = false;
+    // El logo hace de primera letra: "R" + "ESEVN"
+    if (C.logoComoInicial) {
+      $("logo-texto").textContent = C.nombreTienda.slice(1);
+      $("logo").setAttribute("aria-label", C.nombreTienda);
+    }
+  }
   $("link-instagram").href = "https://instagram.com/" + C.instagram.replace(/^@/, "");
   $("link-whatsapp").href = linkWhatsapp("");
   // Abre el chat directo (DM) de Instagram; Instagram no permite prellenar el mensaje
