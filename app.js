@@ -43,6 +43,10 @@
     ["aviso-promo", "detalle-promo"].forEach((id) => { $(id).textContent = C.aviso; $(id).hidden = false; });
   }
 
+  if (C.notaEntrega) {
+    document.querySelectorAll("[data-entrega]").forEach((el) => { el.textContent = C.notaEntrega; el.hidden = false; });
+  }
+
   // ---------- Grilla ----------
   function tarjeta(p) {
     const boton = crear("button", "tarjeta");
