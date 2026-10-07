@@ -200,6 +200,8 @@
     const precio = formatoPrecio(p.precio);
     $("detalle-precio").textContent = precio;
     $("detalle-precio").hidden = !precio;
+    // "sinPromo": true en products.json oculta el aviso de promoción en esa polera
+    $("detalle-promo").hidden = !C.aviso || p.sinPromo === true;
     chips("detalle-tallas", p.tallas);
 
     const colores = $("detalle-colores");

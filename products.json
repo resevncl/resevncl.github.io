@@ -1497,7 +1497,8 @@
     ],
     "categoria": "poleras",
     "precio": 29990,
-    "visible": true
+    "visible": true,
+    "sinPromo": true
   },
   {
     "id": "mlc2077146021",
