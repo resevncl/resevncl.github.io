@@ -27,6 +27,9 @@ window.CONFIG = {
   // Plazo de entrega: se muestra en el detalle de cada polera y en el footer. "" = no mostrar.
   notaEntrega: "Productos por encargo · Entrega estimada de 1 a 2 semanas",
 
+  // Guía de tallas: se agrega sola como última foto de todas las poleras. null = no mostrar.
+  guiaTallas: "img/guia-de-tallas.webp",
+
   // Texto del banner principal
   bannerTitulo: "NUEVA COLECCIÓN",
   bannerBoton: "VER POLERAS",

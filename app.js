@@ -150,7 +150,7 @@
     fotos.replaceChildren(...imagenes.map((ruta, i) => {
       const img = crear("img");
       img.src = ruta;
-      img.alt = p.nombre + " — foto " + (i + 1);
+      img.alt = ruta === C.guiaTallas ? "Guía de tallas" : p.nombre + " — foto " + (i + 1);
       if (i > 0) img.loading = "lazy";
       return img;
     }));
@@ -187,7 +187,8 @@
   // Elige un color: cambia las fotos, el texto "Color: X" y el mensaje de WhatsApp
   function elegirColor(p, indice) {
     const v = p.variantes[indice];
-    pintarFotos(p, v.imagenes);
+    // Orden de la galería: frente, espalda, detalles y, al final, la guía de tallas
+    pintarFotos(p, C.guiaTallas ? v.imagenes.concat(C.guiaTallas) : v.imagenes);
     $("detalle-color-actual").textContent = v.color;
     $("detalle-colores").querySelectorAll("button").forEach((b, i) => b.setAttribute("aria-pressed", String(i === indice)));
     const consulta = p.variantes.length > 1 ? p.nombre + " (color " + v.color + ")" : p.nombre;

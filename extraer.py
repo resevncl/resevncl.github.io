@@ -186,6 +186,14 @@ def main():
                 if dim and max(dim) < MIN_LADO:
                     reporte["baja_res"].append(f"{nombre_img} ({dim[0]}x{dim[1]})")
                 imagenes.append(f"img/{nombre_img}")
+            # La última foto del proveedor suele ser su tabla de medidas (apaisada): no se usa,
+            # porque el sitio agrega la guía de tallas propia al final de cada galería
+            if len(imagenes) > 2:
+                ultima = dimensiones_webp((RAIZ / imagenes[-1]).read_bytes())
+                if ultima and ultima[0] / ultima[1] > 1.55:
+                    for carpeta in (IMG, MIN):
+                        (carpeta / Path(imagenes[-1]).name).unlink()
+                    imagenes.pop()
             variantes.append({"color": v["color"], "imagenes": imagenes})
 
         productos.append({
