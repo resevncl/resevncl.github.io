@@ -154,7 +154,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .detalle-info .boton { display: block; margin-top: 32px; }
 .detalle-info .boton + .boton { margin-top: 10px; }
 .boton-borde { background: var(--blanco); color: var(--negro); }
-.boton-borde:hover { background: var(--negro); color: var(--blanco); }
+.boton-borde:hover { background: var(--gris-claro); color: var(--negro); }
+/* WhatsApp en su verde (oscurecido para que el texto blanco se lea bien) */
+#detalle-whatsapp { background: #128c4b; border-color: #128c4b; color: var(--blanco); }
+#detalle-whatsapp:hover { background: #0e733d; border-color: #0e733d; color: var(--blanco); }
 
 /* ---------- Escritorio ---------- */
 @media (min-width: 700px) {
